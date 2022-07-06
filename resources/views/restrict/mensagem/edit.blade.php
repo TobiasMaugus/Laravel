@@ -8,7 +8,7 @@
     @endforeach
 </ul>
 @endif
-<form method="{{route('mesagem', $mensagem->id)}}">
+<form method='POST' action="{{route('mensagem', $mensagem->id)}}">
     @csrf
     @method('PUT')
     <div>

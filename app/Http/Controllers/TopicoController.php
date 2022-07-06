@@ -37,7 +37,7 @@ class TopicoController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'topico' => 'required|mad:255',
+            'topico' => 'required|max:255',
         ]);
         if ($validated) {
             $topico = new Topico();
@@ -66,7 +66,7 @@ class TopicoController extends Controller
      */
     public function edit(Topico $topico)
     {
-        return view("restrict/topicoi/edit", compact("topico"));
+        return view("restrict/topico/edit", compact("topico"));
     }
 
     /**

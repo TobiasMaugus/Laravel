@@ -1,4 +1,4 @@
-@extends('restrict.layout'
+@extends('restrict.layout')
 
 @section('content')
 <div>

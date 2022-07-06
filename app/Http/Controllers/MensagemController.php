@@ -28,7 +28,7 @@ class MensagemController extends Controller
     public function create()
     {
         $topicos = Topico::all();
-        return view("restrict/mensagem", compact('mensagem'));
+        return view("restrict/mensagem/create", compact('topicos'));
     }
 
     /**

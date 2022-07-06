@@ -17,20 +17,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($mensagens as $mesagem)
+        @foreach($mensagens as $mensagem)
         <tr>
             <td>{{$mensagem->user->name}}</td>
             <td>{{$mensagem->titulo}}</td>
             <td>{{$mensagem->mensagem}}</td>
             <td>
-                @if($mesagem->topicos)
-                @foreach($mesagem->topicos as $topico)
+                @if($mensagem->topicos)
+                @foreach($mensagem->topicos as $topico)
                 <div>{{$topico->topico}}</div>
-                @foreach
+                @endforeach
                 @endif
             </td>
             <td>
-                <form method="POST" action="{{route('mesagem.detroy', $mensagem->id)}}" onsubmit="return confirm('tem certeza?');">
+                <form method="POST" action="{{route('mensagem.destroy', $mensagem->id)}}" onsubmit="return confirm('tem certeza?');">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="button">
